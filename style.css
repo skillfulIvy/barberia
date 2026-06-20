@@ -3,6 +3,7 @@
 ========================================= */
 :root {
     --negro: #0a0a0a;
+    --negro-alterno: #0d0d0c;
     --carbon: #161614;
     --carbon-claro: #211f1c;
     --linea: #2c2a26;
@@ -36,7 +37,11 @@ html {
 }
 
 body {
-    background-color: var(--negro);
+    background:
+        radial-gradient(circle at 85% 0%, rgba(196, 133, 74, 0.10), transparent 40%),
+        radial-gradient(circle at 0% 60%, rgba(196, 133, 74, 0.05), transparent 35%),
+        var(--negro);
+    background-attachment: fixed;
     color: var(--hueso);
     font-family: var(--texto);
     font-size: 16px;
@@ -193,10 +198,23 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 }
 
 .marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
     font-family: var(--display);
     font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: -0.01em;
+}
+
+.marca__monograma {
+    color: var(--cobre-claro);
+    flex-shrink: 0;
+    transition: transform var(--rapido);
+}
+
+.marca:hover .marca__monograma {
+    transform: rotate(8deg);
 }
 
 .nav-escritorio {
@@ -277,6 +295,15 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
     padding: 64px 0 88px;
     overflow: hidden;
 }
+
+/* Cuando haya foto real del local/barbero, descomentar y poner la ruta:
+.hero {
+    background-image: linear-gradient(180deg, rgba(10,10,10,0.55), rgba(10,10,10,0.9)), url("img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+El overlay oscuro (linear-gradient) es necesario para que el texto blanco
+siga siendo legible encima de cualquier foto. */
 
 .hero__grid {
     display: grid;
@@ -436,6 +463,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .nosotros {
     padding: 88px 0;
     border-top: 1px solid var(--linea);
+    background-color: var(--negro-alterno);
 }
 
 .nosotros__grid {
@@ -523,6 +551,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .testimonios {
     padding: 88px 0;
     border-top: 1px solid var(--linea);
+    background-color: var(--negro-alterno);
 }
 
 .testimonios__grid {
