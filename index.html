@@ -1,18 +1,343 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbería Premium</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuervo Barbería — Hermosillo</title>
+<meta name="description" content="Barbería moderna en Hermosillo. Cortes clásicos y contemporáneos, arreglo de barba y afeitado tradicional. Agenda por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Barbería Premium</h1>
+<div class="grano"></div>
 
-    <p>Los mejores cortes y estilos de la ciudad.</p>
+<header class="header" id="header">
+  <div class="contenedor header__fila">
+    <a href="#" class="marca">Cuervo</a>
 
-    <button>Reservar por WhatsApp</button>
+    <nav class="nav-escritorio">
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#testimonios">Clientes</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
 
+    <a href="#contacto" class="boton boton--solido boton--sm">Agendar</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="nav-movil" id="navMovil">
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#galeria">Galería</a>
+    <a href="#testimonios">Clientes</a>
+    <a href="#faq">Preguntas</a>
+    <a href="#contacto" class="boton boton--solido">Agendar cita</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="contenedor hero__grid">
+      <div class="hero__texto" data-reveal>
+        <span class="eyebrow">Hermosillo · Desde 2019</span>
+        <h1 class="hero__titulo">
+          El corte<br>
+          es un <em>oficio</em>,<br>
+          no un trámite.
+        </h1>
+        <p class="hero__sub">
+          Barbería de cita, sin prisas. Navaja, vapor y técnica
+          clásica para quien cuida los detalles.
+        </p>
+        <div class="hero__acciones">
+          <a href="#contacto" class="boton boton--solido">Agendar cita</a>
+          <a href="#servicios" class="boton boton--texto">Ver servicios →</a>
+        </div>
+      </div>
+
+      <div class="hero__visual" data-reveal>
+        <div class="hero__tarjeta">
+          <div class="hero__tarjeta-fila">
+            <span>Reserva por WhatsApp</span>
+            <span class="punto-vivo"></span>
+          </div>
+          <p class="hero__tarjeta-hora">Respuesta en minutos</p>
+          <p class="hero__tarjeta-detalle">Mar – Sáb, 10:00 AM – 8:00 PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="trazo-navaja" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ SERVICIOS ============ -->
+  <section class="servicios" id="servicios">
+    <div class="contenedor">
+      <div class="encabezado-seccion" data-reveal>
+        <span class="eyebrow">Servicios</span>
+        <h2 class="titulo-seccion">Cada servicio, a su tiempo</h2>
+      </div>
+
+      <div class="lista-servicios">
+
+        <article class="fila-servicio" data-reveal>
+          <span class="fila-servicio__num">01</span>
+          <div class="fila-servicio__cuerpo">
+            <h3>Corte clásico</h3>
+            <p>Tijera y máquina, acabado en navaja. Incluye lavado.</p>
+          </div>
+          <span class="fila-servicio__precio">$250</span>
+        </article>
+
+        <article class="fila-servicio" data-reveal>
+          <span class="fila-servicio__num">02</span>
+          <div class="fila-servicio__cuerpo">
+            <h3>Corte + barba</h3>
+            <p>Diseño completo de barba con toalla caliente.</p>
+          </div>
+          <span class="fila-servicio__precio">$380</span>
+        </article>
+
+        <article class="fila-servicio" data-reveal>
+          <span class="fila-servicio__num">03</span>
+          <div class="fila-servicio__cuerpo">
+            <h3>Afeitado tradicional</h3>
+            <p>Navaja, vapor y tres pasadas. La experiencia completa.</p>
+          </div>
+          <span class="fila-servicio__precio">$300</span>
+        </article>
+
+        <article class="fila-servicio" data-reveal>
+          <span class="fila-servicio__num">04</span>
+          <div class="fila-servicio__cuerpo">
+            <h3>Diseño y línea</h3>
+            <p>Delineado de barba o contornos, mantenimiento rápido.</p>
+          </div>
+          <span class="fila-servicio__precio">$150</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOSOTROS ============ -->
+  <section class="nosotros" id="nosotros">
+    <div class="contenedor nosotros__grid">
+      <div class="nosotros__visual" data-reveal>
+        <div class="nosotros__foto">
+          <span>Foto del barbero</span>
+        </div>
+      </div>
+
+      <div class="nosotros__texto" data-reveal>
+        <span class="eyebrow">Nosotros</span>
+        <h2 class="titulo-seccion">Más que un corte</h2>
+        <p class="nosotros__parrafo">
+          Desde 2019, Cuervo Barbería trabaja con cita previa y atención
+          personalizada. Cada cliente conoce a su barbero, y cada
+          barbero conoce el estilo de su cliente.
+        </p>
+        <p class="nosotros__parrafo">
+          No atendemos por volumen, atendemos por detalle. Por eso
+          trabajamos siempre con cita.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALERÍA ============ -->
+  <section class="galeria" id="galeria">
+    <div class="contenedor">
+      <div class="encabezado-seccion" data-reveal>
+        <span class="eyebrow">Galería</span>
+        <h2 class="titulo-seccion">Trabajo, no promesas</h2>
+      </div>
+
+      <div class="galeria__grid">
+        <div class="galeria__item galeria__item--alto" data-reveal><span>Corte clásico</span></div>
+        <div class="galeria__item" data-reveal><span>Barba diseñada</span></div>
+        <div class="galeria__item" data-reveal><span>Fade contemporáneo</span></div>
+        <div class="galeria__item galeria__item--alto" data-reveal><span>Afeitado tradicional</span></div>
+        <div class="galeria__item" data-reveal><span>Detalle de línea</span></div>
+        <div class="galeria__item" data-reveal><span>Acabado en navaja</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS ============ -->
+  <section class="testimonios" id="testimonios">
+    <div class="contenedor">
+      <div class="encabezado-seccion" data-reveal>
+        <span class="eyebrow">Clientes</span>
+        <h2 class="titulo-seccion">Lo que dicen al salir</h2>
+      </div>
+
+      <div class="testimonios__grid">
+
+        <blockquote class="testimonio" data-reveal>
+          <p>"Pedí un corte específico y lo entendieron a la primera. Sin explicaciones de más."</p>
+          <footer>Raúl Domínguez</footer>
+        </blockquote>
+
+        <blockquote class="testimonio" data-reveal>
+          <p>"El afeitado tradicional es otro nivel. Voy cada tres semanas sin falta."</p>
+          <footer>Emilio Castro</footer>
+        </blockquote>
+
+        <blockquote class="testimonio" data-reveal>
+          <p>"Ambiente serio, buena música, cero espera si agendas. Así debería ser siempre."</p>
+          <footer>Adrián Lugo</footer>
+        </blockquote>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="contenedor faq__grid">
+      <div class="encabezado-seccion encabezado-seccion--fija" data-reveal>
+        <span class="eyebrow">Preguntas</span>
+        <h2 class="titulo-seccion">Antes de venir</h2>
+      </div>
+
+      <div class="acordeon" data-reveal>
+
+        <div class="acordeon__item">
+          <button class="acordeon__pregunta">
+            ¿Necesito agendar con anticipación?
+            <span class="acordeon__icono"></span>
+          </button>
+          <div class="acordeon__respuesta">
+            <p>Se recomienda agendar por WhatsApp, sobre todo viernes y sábado. Entre semana solemos tener espacio el mismo día.</p>
+          </div>
+        </div>
+
+        <div class="acordeon__item">
+          <button class="acordeon__pregunta">
+            ¿Cuánto dura una cita?
+            <span class="acordeon__icono"></span>
+          </button>
+          <div class="acordeon__respuesta">
+            <p>Un corte sencillo toma alrededor de 30 minutos. Corte más barba, entre 45 y 60 minutos.</p>
+          </div>
+        </div>
+
+        <div class="acordeon__item">
+          <button class="acordeon__pregunta">
+            ¿Aceptan tarjeta?
+            <span class="acordeon__icono"></span>
+          </button>
+          <div class="acordeon__respuesta">
+            <p>Sí, aceptamos efectivo, tarjeta y transferencia.</p>
+          </div>
+        </div>
+
+        <div class="acordeon__item">
+          <button class="acordeon__pregunta">
+            ¿Atienden a menores?
+            <span class="acordeon__icono"></span>
+          </button>
+          <div class="acordeon__respuesta">
+            <p>Sí, a partir de 8 años, siempre acompañados de un adulto.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="contacto" id="contacto">
+    <div class="contenedor">
+      <div class="contacto__caja" data-reveal>
+        <span class="eyebrow">Contacto</span>
+        <h2 class="titulo-seccion">Agenda tu próximo corte</h2>
+        <p class="contacto__sub">Respondemos por WhatsApp en minutos, no en días.</p>
+        <a href="https://wa.me/526621234567?text=Hola%2C%20quiero%20agendar%20una%20cita" class="boton boton--solido boton--grande" target="_blank" rel="noopener">
+          Escribir por WhatsApp
+        </a>
+        <p class="contacto__detalle">Blvd. Ejemplo 456, Hermosillo · Mar – Sáb, 10:00 – 20:00</p>
+        <a href="https://maps.google.com/?q=Blvd.+Ejemplo+456,+Hermosillo,+Sonora" target="_blank" rel="noopener" class="contacto__mapa">
+          Ver ubicación en el mapa →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="contenedor footer__grid">
+
+    <div class="footer__marca">
+      <span class="marca marca--footer">Cuervo</span>
+      <p class="footer__descripcion">
+        Barbería de cita en Hermosillo. Corte, barba y afeitado
+        tradicional desde 2019.
+      </p>
+      <div class="footer__redes">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d="M16.5 3c.3 2 1.7 3.6 3.8 3.9v2.6c-1.4 0-2.7-.4-3.8-1.2v6.4c0 3.3-2.7 5.8-5.9 5.5-2.8-.3-5-2.6-5.1-5.4-.2-3.4 2.5-6.2 5.8-6.2.3 0 .6 0 .9.1v2.7a3 3 0 1 0 2.1 2.9V3h2.2z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/526621234567" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.1 7c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3z"/>
+            <path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3.2.9.9-3.1-.2-.3c-.9-1.4-1.4-3.1-1.4-4.8 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7-3.9 8.7-8.7 8.7z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__columna">
+      <h3>Navegación</h3>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#galeria">Galería</a>
+      <a href="#faq">Preguntas</a>
+    </div>
+
+    <div class="footer__columna">
+      <h3>Contacto</h3>
+      <a href="https://maps.google.com/?q=Blvd.+Ejemplo+456,+Hermosillo,+Sonora" target="_blank" rel="noopener">
+        Blvd. Ejemplo 456, Hermosillo
+      </a>
+      <a href="https://wa.me/526621234567">662 123 4567</a>
+      <span class="footer__horario">Mar – Sáb, 10:00 AM – 8:00 PM</span>
+    </div>
+
+  </div>
+
+  <div class="contenedor footer__legal">
+    <p>&copy; 2026 Cuervo Barbería. Hermosillo, Sonora.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/526621234567?text=Hola%2C%20quiero%20agendar%20una%20cita" class="whatsapp-flotante" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+    <path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.1 7c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.3-.2-.6-.3z"/>
+    <path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3.2.9.9-3.1-.2-.3c-.9-1.4-1.4-3.1-1.4-4.8 0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7-3.9 8.7-8.7 8.7z"/>
+  </svg>
+</a>
+
+<script src="script.js"></script>
 </body>
 </html>
