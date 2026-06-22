@@ -5,6 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cuervo Barbería — Hermosillo</title>
 <meta name="description" content="Barbería moderna en Hermosillo. Cortes clásicos y contemporáneos, arreglo de barba y afeitado tradicional. Agenda por WhatsApp.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cuervo Barbería — Hermosillo">
+<meta property="og:description" content="Barbería de cita en Hermosillo. Corte, barba y afeitado tradicional desde 2019.">
+<meta property="og:image" content="img/nosotros.jpg">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Cuervo Barbería",
+  "image": "img/nosotros.jpg",
+  "description": "Barbería de cita en Hermosillo. Corte, barba y afeitado tradicional desde 2019.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Blvd. Ejemplo 456",
+    "addressLocality": "Hermosillo",
+    "addressRegion": "Sonora"
+  },
+  "telephone": "+526621234567",
+  "openingHours": "Tu-Sa 10:00-20:00",
+  "priceRange": "$150-$380"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -259,7 +286,7 @@
 
   <!-- ============ CONTACTO ============ -->
   <section class="contacto" id="contacto">
-    <div class="contenedor">
+    <div class="contenedor contacto__grid">
       <div class="contacto__caja" data-reveal>
         <h2 class="titulo-seccion">Agenda tu próximo corte</h2>
         <p class="contacto__sub">Respondemos por WhatsApp en minutos, no en días.</p>
@@ -267,8 +294,17 @@
           Escribir por WhatsApp
         </a>
         <p class="contacto__detalle">Blvd. Ejemplo 456, Hermosillo · Mar – Sáb, 10:00 – 20:00</p>
-        <a href="https://maps.google.com/?q=Blvd.+Ejemplo+456,+Hermosillo,+Sonora" target="_blank" rel="noopener" class="contacto__mapa">
-          Ver ubicación en el mapa →
+      </div>
+
+      <div class="contacto__mapa-caja" data-reveal>
+        <iframe
+          src="https://www.google.com/maps?q=Blvd.+Ejemplo+456,+Hermosillo,+Sonora&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de Cuervo Barbería">
+        </iframe>
+        <a href="https://maps.google.com/?q=Blvd.+Ejemplo+456,+Hermosillo,+Sonora" target="_blank" rel="noopener" class="contacto__mapa-enlace">
+          Abrir en Google Maps →
         </a>
       </div>
     </div>

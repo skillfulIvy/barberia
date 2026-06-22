@@ -696,10 +696,14 @@ siga siendo legible encima de cualquier foto. */
     border-top: 1px solid var(--linea);
 }
 
+.contacto__grid {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+}
+
 .contacto__caja {
-    text-align: center;
-    max-width: 520px;
-    margin: 0 auto;
+    max-width: 480px;
 }
 
 .contacto__sub {
@@ -713,16 +717,48 @@ siga siendo legible encima de cualquier foto. */
     font-size: 0.88rem;
 }
 
-.contacto__mapa {
-    display: inline-block;
-    margin-top: 12px;
-    color: var(--cobre-claro);
-    font-size: 0.88rem;
-    transition: color var(--rapido);
+.contacto__mapa-caja {
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    overflow: hidden;
+    position: relative;
+    filter: grayscale(55%);
+    transition: filter var(--medio);
 }
 
-.contacto__mapa:hover {
+.contacto__mapa-caja:hover {
+    filter: grayscale(0%);
+}
+
+.contacto__mapa-caja iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.contacto__mapa-enlace {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background-color: rgba(10, 10, 10, 0.85);
     color: var(--hueso);
+    font-size: 0.82rem;
+    padding: 9px 16px;
+    border-radius: 100px;
+    transition: background-color var(--rapido);
+}
+
+.contacto__mapa-enlace:hover {
+    background-color: var(--cobre);
+    color: #1a1208;
+}
+
+@media (min-width: 760px) {
+    .contacto__grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* =========================================
