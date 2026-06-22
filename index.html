@@ -39,12 +39,14 @@
   </div>
 
   <nav class="nav-movil" id="navMovil">
-    <a href="#servicios">Servicios</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#galeria">Galería</a>
-    <a href="#testimonios">Clientes</a>
-    <a href="#faq">Preguntas</a>
-    <a href="#contacto" class="boton boton--solido">Agendar cita</a>
+    <div class="nav-movil__inner">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#galeria">Galería</a>
+      <a href="#testimonios">Clientes</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto" class="boton boton--solido">Agendar cita</a>
+    </div>
   </nav>
 </header>
 
@@ -89,7 +91,6 @@
   <section class="servicios" id="servicios">
     <div class="contenedor">
       <div class="encabezado-seccion" data-reveal>
-        <span class="eyebrow">Servicios</span>
         <h2 class="titulo-seccion">Cada servicio, a su tiempo</h2>
       </div>
 
@@ -139,13 +140,10 @@
   <section class="nosotros" id="nosotros">
     <div class="contenedor nosotros__grid">
       <div class="nosotros__visual" data-reveal>
-        <div class="nosotros__foto">
-          <span>Foto del barbero</span>
-        </div>
+        <div class="nosotros__foto" style="background-image:url('img/nosotros.jpg')"></div>
       </div>
 
       <div class="nosotros__texto" data-reveal>
-        <span class="eyebrow">Nosotros</span>
         <h2 class="titulo-seccion">Más que un corte</h2>
         <p class="nosotros__parrafo">
           Desde 2019, Cuervo Barbería trabaja con cita previa y atención
@@ -164,17 +162,16 @@
   <section class="galeria" id="galeria">
     <div class="contenedor">
       <div class="encabezado-seccion" data-reveal>
-        <span class="eyebrow">Galería</span>
         <h2 class="titulo-seccion">Trabajo, no promesas</h2>
       </div>
 
       <div class="galeria__grid">
-        <div class="galeria__item galeria__item--alto" data-reveal><span>Corte clásico</span></div>
-        <div class="galeria__item" data-reveal><span>Barba diseñada</span></div>
-        <div class="galeria__item" data-reveal><span>Fade contemporáneo</span></div>
-        <div class="galeria__item galeria__item--alto" data-reveal><span>Afeitado tradicional</span></div>
-        <div class="galeria__item" data-reveal><span>Detalle de línea</span></div>
-        <div class="galeria__item" data-reveal><span>Acabado en navaja</span></div>
+        <div class="galeria__item galeria__item--alto" data-reveal style="background-image:url('img/galeria-1.jpg')"><span>Corte clásico</span></div>
+        <div class="galeria__item" data-reveal style="background-image:url('img/galeria-2.jpg')"><span>Barba diseñada</span></div>
+        <div class="galeria__item" data-reveal style="background-image:url('img/galeria-3.jpg')"><span>Fade contemporáneo</span></div>
+        <div class="galeria__item galeria__item--alto" data-reveal style="background-image:url('img/galeria-4.jpg')"><span>Afeitado tradicional</span></div>
+        <div class="galeria__item" data-reveal style="background-image:url('img/galeria-5.jpg')"><span>Detalle de línea</span></div>
+        <div class="galeria__item" data-reveal style="background-image:url('img/galeria-6.jpg')"><span>Acabado en navaja</span></div>
       </div>
     </div>
   </section>
@@ -183,7 +180,6 @@
   <section class="testimonios" id="testimonios">
     <div class="contenedor">
       <div class="encabezado-seccion" data-reveal>
-        <span class="eyebrow">Clientes</span>
         <h2 class="titulo-seccion">Lo que dicen al salir</h2>
       </div>
 
@@ -212,7 +208,6 @@
   <section class="faq" id="faq">
     <div class="contenedor faq__grid">
       <div class="encabezado-seccion encabezado-seccion--fija" data-reveal>
-        <span class="eyebrow">Preguntas</span>
         <h2 class="titulo-seccion">Antes de venir</h2>
       </div>
 
@@ -266,7 +261,6 @@
   <section class="contacto" id="contacto">
     <div class="contenedor">
       <div class="contacto__caja" data-reveal>
-        <span class="eyebrow">Contacto</span>
         <h2 class="titulo-seccion">Agenda tu próximo corte</h2>
         <p class="contacto__sub">Respondemos por WhatsApp en minutos, no en días.</p>
         <a href="https://wa.me/526621234567?text=Hola%2C%20quiero%20agendar%20una%20cita" class="boton boton--solido boton--grande" target="_blank" rel="noopener">

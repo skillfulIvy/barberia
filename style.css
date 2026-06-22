@@ -114,8 +114,10 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
     margin-bottom: 56px;
 }
 
-/* Reveal al hacer scroll — controlado por script.js */
-[data-reveal] {
+/* Reveal al hacer scroll — controlado por script.js.
+   Gateado por .js-activo (la añade script.js en la primera línea):
+   si JS falla o está desactivado, el contenido nunca se oculta. */
+.js-activo [data-reveal] {
     opacity: 0;
     transform: translateY(18px);
     transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -262,17 +264,23 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 }
 
 .nav-movil {
-    max-height: 0;
+    display: grid;
+    grid-template-rows: minmax(0, 0fr);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
     background-color: var(--carbon);
     border-bottom: 1px solid var(--linea);
-    transition: max-height var(--medio);
+    transition: grid-template-rows var(--medio);
 }
 
 .nav-movil.abierto {
-    max-height: 320px;
+    grid-template-rows: minmax(0, 1fr);
+}
+
+.nav-movil__inner {
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-movil a {
@@ -419,7 +427,7 @@ siga siendo legible encima de cualquier foto. */
     align-items: baseline;
     padding: 28px 0;
     border-top: 1px solid var(--linea);
-    transition: padding-left var(--medio);
+    transition: transform var(--medio);
 }
 
 .fila-servicio:last-child {
@@ -427,7 +435,7 @@ siga siendo legible encima de cualquier foto. */
 }
 
 .fila-servicio:hover {
-    padding-left: 12px;
+    transform: translateX(12px);
 }
 
 .fila-servicio__num {
@@ -454,7 +462,7 @@ siga siendo legible encima de cualquier foto. */
 .fila-servicio__precio {
     grid-column: 2;
     font-size: 0.92rem;
-    color: var(--gris-tenue);
+    color: var(--gris);
 }
 
 /* =========================================
@@ -474,20 +482,16 @@ siga siendo legible encima de cualquier foto. */
 .nosotros__foto {
     aspect-ratio: 4 / 3;
     background-color: var(--carbon);
+    background-size: cover;
+    background-position: center;
     border: 1px solid var(--linea);
     border-radius: var(--radio);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    filter: grayscale(30%);
+    transition: filter var(--medio);
 }
 
-.nosotros__foto span {
-    color: var(--gris-tenue);
-    font-size: 0.9rem;
-}
-
-.nosotros__texto .eyebrow {
-    display: block;
+.nosotros__visual:hover .nosotros__foto {
+    filter: grayscale(0%);
 }
 
 .nosotros__texto .titulo-seccion {
@@ -523,13 +527,23 @@ siga siendo legible encima de cualquier foto. */
     position: relative;
     aspect-ratio: 1 / 1;
     background-color: var(--carbon);
+    background-size: cover;
+    background-position: center;
     border: 1px solid var(--linea);
     border-radius: var(--radio);
     display: flex;
     align-items: flex-end;
     padding: 16px;
     overflow: hidden;
-    transition: border-color var(--rapido);
+    filter: grayscale(45%);
+    transition: border-color var(--rapido), filter var(--medio);
+}
+
+.galeria__item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(10, 10, 10, 0.85));
 }
 
 .galeria__item--alto {
@@ -538,11 +552,14 @@ siga siendo legible encima de cualquier foto. */
 
 .galeria__item:hover {
     border-color: var(--cobre);
+    filter: grayscale(0%);
 }
 
 .galeria__item span {
+    position: relative;
+    z-index: 1;
     font-size: 0.85rem;
-    color: var(--gris);
+    color: var(--hueso);
 }
 
 /* =========================================
@@ -575,7 +592,7 @@ siga siendo legible encima de cualquier foto. */
 
 .testimonio footer {
     font-size: 0.85rem;
-    color: var(--gris-tenue);
+    color: var(--gris);
     letter-spacing: 0.02em;
 }
 
@@ -652,12 +669,19 @@ siga siendo legible encima de cualquier foto. */
 }
 
 .acordeon__respuesta {
-    max-height: 0;
+    display: grid;
+    grid-template-rows: minmax(0, 0fr);
     overflow: hidden;
-    transition: max-height var(--medio);
+    transition: grid-template-rows var(--medio);
+}
+
+.acordeon__item.abierto .acordeon__respuesta {
+    grid-template-rows: minmax(0, 1fr);
 }
 
 .acordeon__respuesta p {
+    min-height: 0;
+    overflow: hidden;
     color: var(--gris);
     font-size: 0.95rem;
     padding-bottom: 22px;
@@ -678,10 +702,6 @@ siga siendo legible encima de cualquier foto. */
     margin: 0 auto;
 }
 
-.contacto__caja .eyebrow {
-    display: block;
-}
-
 .contacto__sub {
     color: var(--gris);
     margin: 16px 0 32px;
@@ -689,7 +709,7 @@ siga siendo legible encima de cualquier foto. */
 
 .contacto__detalle {
     margin-top: 24px;
-    color: var(--gris-tenue);
+    color: var(--gris);
     font-size: 0.88rem;
 }
 
@@ -758,7 +778,7 @@ siga siendo legible encima de cualquier foto. */
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--gris-tenue);
+    color: var(--gris);
     margin-bottom: 4px;
 }
 
@@ -779,7 +799,7 @@ siga siendo legible encima de cualquier foto. */
 }
 
 .footer__legal p {
-    color: var(--gris-tenue);
+    color: var(--gris);
     font-size: 0.82rem;
 }
 

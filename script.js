@@ -1,4 +1,12 @@
 /* =========================================
+   0. ACTIVAR ANIMACIONES DE SCROLL
+   Solo si JS corre se ocultan los [data-reveal]
+   (ver regla .js-activo en style.css). Así, si el
+   script falla, el contenido nunca queda invisible.
+========================================= */
+document.documentElement.classList.add('js-activo');
+
+/* =========================================
    1. MENÚ MÓVIL
    Abre/cierra el menú hamburguesa y mantiene
    sincronizado el atributo aria-expanded
@@ -28,21 +36,11 @@ navMovil.querySelectorAll('a').forEach((link) => {
 ========================================= */
 const preguntas = document.querySelectorAll('.acordeon__pregunta');
 
+// La animación de apertura vive en CSS (grid-template-rows en .acordeon__respuesta);
+// acá solo togglear la clase, sin medir scrollHeight.
 preguntas.forEach((boton) => {
     boton.addEventListener('click', () => {
-        const item = boton.closest('.acordeon__item');
-        const respuesta = item.querySelector('.acordeon__respuesta');
-        const estaAbierto = item.classList.contains('abierto');
-
-        if (estaAbierto) {
-            item.classList.remove('abierto');
-            respuesta.style.maxHeight = null;
-        } else {
-            item.classList.add('abierto');
-            // scrollHeight = la altura real del contenido,
-            // así la transición de max-height sabe a dónde llegar
-            respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
-        }
+        boton.closest('.acordeon__item').classList.toggle('abierto');
     });
 });
 
@@ -52,6 +50,14 @@ preguntas.forEach((boton) => {
    suavemente cuando entra en pantalla.
    Usa IntersectionObserver: mucho más eficiente
    que escuchar el evento "scroll" directamente.
+
+   Red de seguridad: cualquier capturador de pantalla, lector
+   de PDF o bot que no haga scroll real (algunos crawlers de
+   buscadores incluidos) nunca dispara el IntersectionObserver,
+   y el contenido se quedaría invisible para siempre. Por eso,
+   a los 2.5s se fuerza la revelación de lo que quede oculto:
+   para un usuario real ya pasó de sobra, y para esos casos
+   evita que secciones completas desaparezcan.
 ========================================= */
 const elementosReveal = document.querySelectorAll('[data-reveal]');
 
@@ -67,10 +73,16 @@ const observador = new IntersectionObserver(
     },
     {
         threshold: 0.15, // se activa cuando el 15% del elemento es visible
+        rootMargin: '0px 0px -10% 0px',
     }
 );
 
 elementosReveal.forEach((el) => observador.observe(el));
+
+setTimeout(() => {
+    elementosReveal.forEach((el) => el.classList.add('en-vista'));
+    observador.disconnect();
+}, 2500);
 
 /* =========================================
    4. HEADER: sombra/fondo más sólido al hacer scroll
